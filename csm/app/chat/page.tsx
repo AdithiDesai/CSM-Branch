@@ -6,14 +6,18 @@ import {
   Paperclip,
   Smiley,
   PlusCircle,
+  SignOut,
 } from "@phosphor-icons/react/dist/ssr";
+
 import Image from "next/image";
 import Message from "../components/Message";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 function page() {
   const [agentname, setName] = useState("");
   const [agentUUID, setUUID] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     if (!sessionStorage.getItem("UUID")) {
@@ -28,6 +32,27 @@ function page() {
       setUUID(uuid);
     }
   }, []);
+
+  const logout = async () => {
+    // implement api request to delete the agent from the database
+
+    let data = {
+      uuid: sessionStorage.getItem("UUID"),
+      documentId: sessionStorage.getItem("DBID"),
+    };
+
+    const response = await fetch("/api/agentDestroy", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      console.error("Error logging out");
+    } else {
+      sessionStorage.clear();
+      router.push("/");
+    }
+  };
 
   // Messages fetch
 
@@ -89,7 +114,17 @@ function page() {
           <div>
             <span className={["text-xl font-bold"].join("")}>{agentname}</span>
             <br />
-            <span className="font-semibold opacity-70">Agent</span>
+            <div
+              className="flex flex-row items-center hover:text-orange-500 hover:underline hover:cursor-pointer"
+              onClick={logout}
+            >
+              <div className="mr-1">
+                <SignOut size={22} />
+              </div>
+              <div>
+                <span className="font-semibold opacity-70">Logout</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,13 +144,15 @@ function page() {
               ></Image>
             </div>
             <div>
-              <span className={["text-xl font-bold"].join("")}>
-                Grusha Vashnadze
-              </span>
-              <br />
-              <span className="font-semibold opacity-70">
-                @more_sender_info
-              </span>
+              <div>
+                <span className={["text-xl font-bold"].join("")}>
+                  Grusha Vashnadze
+                </span>
+                <br />
+                <span className="font-semibold opacity-70">
+                  @more_sender_info
+                </span>
+              </div>
             </div>
           </div>
         </div>

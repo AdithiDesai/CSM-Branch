@@ -17,9 +17,9 @@ export async function POST(request: Request) {
       isOccupied: false,
     });
     console.log("Document written with ID: ", docRef.id);
+    return new Response(JSON.stringify({ dbId: docRef.id }), { status: 200 });
   } catch (e) {
     console.error("Error adding document: ", e);
+    return new Response(JSON.stringify(e), { status: 500 });
   }
-
-  return new Response("New Agent added", { status: 200 });
 }

@@ -31,8 +31,11 @@ function page() {
       body: JSON.stringify(formData),
     });
     if (response.ok) {
+      const data = await response.json();
+
       sessionStorage.setItem("UUID", formData.UUID);
       sessionStorage.setItem("NAME", formData.name);
+      sessionStorage.setItem("DBID", data["dbId"]);
 
       router.push("/chat");
     }
