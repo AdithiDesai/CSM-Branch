@@ -7,6 +7,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Message from "../components/Message";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,7 +79,7 @@ function page() {
         </div>
       </div>
       <div
-        className="col-span-3 h-full p-3 bg-[#2b2d31] rounded-md"
+        className="col-span-3 h-full p-3 bg-[#2b2d31] rounded-md overflow-hidden"
         id="rightPane"
       >
         <div id="TopPanel">
@@ -104,7 +105,15 @@ function page() {
           </div>
         </div>
         <hr style={{ margin: "auto" }} className="opacity-50 w-11/12 p-3" />
-        <div id="MessagesBody" className="h-5/6"></div>
+        <div id="MessagesBody" className="h-5/6 flex flex-col overflow-y-auto">
+          <Message content="Tester Message" time="3:10 pm" internal={false} />
+          <Message
+            content="Do you mind taking a cab to GitHub HQ?"
+            time="3:21 pm"
+            internal={true}
+          />
+          <Message content="Sure bet" time="3:23 pm" internal={false} />
+        </div>
         <div id="InputBox" className="w-11/12 " style={{ margin: "auto" }}>
           <div className="flex flex-row bg-[#1e1f22] rounded-xl p-2">
             <PlusCircle color="#879099" size={28} />
