@@ -20,5 +20,5 @@ export async function POST(request: Request) {
     console.error("Error adding document: ", e);
   }
 
-  return new Response("Message Recieved", { status: 200 });
+  return new Response("Message Recieved and added to Queue", { status: 200 });
 }
