@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import {
   MagnifyingGlass,
   Paperclip,
@@ -6,12 +8,29 @@ import {
   PlusCircle,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import Message from "../components/Message";
-
-const inter = Inter({ subsets: ["latin"] });
+import { redirect } from "next/navigation";
 
 function page() {
+  const [agentname, setName] = useState("");
+  const [agentUUID, setUUID] = useState("");
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("UUID")) {
+      redirect("/");
+    }
+
+    const name = sessionStorage.getItem("NAME");
+    const uuid = sessionStorage.getItem("UUID");
+
+    if (name && uuid) {
+      setName(name);
+      setUUID(uuid);
+    }
+  }, []);
+
+  // Messages fetch
+
   return (
     <div className="grid grid-cols-4 h-full p-4 bg-[#1e1f22]">
       <div
@@ -68,13 +87,9 @@ function page() {
             ></Image>
           </div>
           <div>
-            <span className={["text-xl font-bold"].join("")}>
-              Simon Shashava
-            </span>
+            <span className={["text-xl font-bold"].join("")}>{agentname}</span>
             <br />
-            <span className="font-semibold opacity-70">
-              @agent_uuid_goes_here
-            </span>
+            <span className="font-semibold opacity-70">Agent</span>
           </div>
         </div>
       </div>
