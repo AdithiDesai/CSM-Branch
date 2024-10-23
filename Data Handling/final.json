@@ -1,0 +1,744 @@
+[
+  {
+    "User ID": 208,
+    "Timestamp (UTC)": "2017-02-01 19:29:05",
+    "Message Body": "So it means if u pay ua loan before the due date is a disadvantage the last time I paid earlier it was still a problem",
+    "Name": "Patrick Kiprop",
+    "Message ID": "cb7066c0-fe39-4ab9-bf71-1da7fe53a9b5"
+  },
+  {
+    "User ID": 208,
+    "Timestamp (UTC)": "2017-02-01 19:21:58",
+    "Message Body": "The dates of payment are still indicated n no money sent",
+    "Name": "Patrick Kiprop",
+    "Message ID": "5211322f-ee81-46f9-8f3d-5f54f73d34e1"
+  },
+  {
+    "User ID": 208,
+    "Timestamp (UTC)": "2017-02-01 19:21:18",
+    "Message Body": "Why was my application rejected",
+    "Name": "Patrick Kiprop",
+    "Message ID": "86058028-5674-4a22-b913-2890ffbeed67"
+  },
+  {
+    "User ID": 208,
+    "Timestamp (UTC)": "2017-02-01 19:05:45",
+    "Message Body": "Hi branch I requested my number to remain the one I was using there before 0720225243  I don't understand how it changed",
+    "Name": "Patrick Kiprop",
+    "Message ID": "2b4fb353-a2b7-49f6-a70a-1d296d8bb5ac"
+  },
+  {
+    "User ID": 218,
+    "Timestamp (UTC)": "2017-02-01 16:08:21",
+    "Message Body": "I said ill pay 5th esther camoon.. Infact you guys took a week to give me a loan and just cant wait 4days for me to pay back??",
+    "Name": "Peter Obiero",
+    "Message ID": "ea97e9df-ceb3-4ce3-a042-52fe397c63dd"
+  },
+  {
+    "User ID": 218,
+    "Timestamp (UTC)": "2017-02-01 14:07:37",
+    "Message Body": "I  will pay on sunday of 5th and i will pay all the amount.. If that is allowed??",
+    "Name": "Peter Obiero",
+    "Message ID": "13b6191b-4684-400b-8f9a-060e6d356d3f"
+  },
+  {
+    "User ID": 218,
+    "Timestamp (UTC)": "2017-02-01 12:07:07",
+    "Message Body": "I have a late source of salary i expected but i will pay nexr",
+    "Name": "Peter Obiero",
+    "Message ID": "cb0c155a-6187-4b3c-bcd4-f38b6a42302f"
+  },
+  {
+    "User ID": 444,
+    "Timestamp (UTC)": "2017-02-02 15:57:36",
+    "Message Body": "I will clear my loan before 15nth,kindly bear with me.January was tough.",
+    "Name": "Mark Waweru",
+    "Message ID": "0b3c2963-877e-4f4c-81ab-8eb34ee6c57c"
+  },
+  {
+    "User ID": 676,
+    "Timestamp (UTC)": "2017-02-03 14:23:45",
+    "Message Body": "Hi can i get the batch number",
+    "Name": "Taylor Wanjiku",
+    "Message ID": "2aa9429f-43a3-4e47-bfbb-98aa40725abb"
+  },
+  {
+    "User ID": 676,
+    "Timestamp (UTC)": "2017-02-03 14:23:25",
+    "Message Body": "Hi can i get the batch number pl",
+    "Name": "Taylor Wanjiku",
+    "Message ID": "2d7199d2-f537-41ed-b9bc-2ed0a73a07c7"
+  },
+  {
+    "User ID": 779,
+    "Timestamp (UTC)": "2017-02-03 18:59:40",
+    "Message Body": "I Still not satisfied. I am still asking for a review.  My number is 0723506931 or at least give me a clear reason.  Thanks",
+    "Name": "Karen Omondi",
+    "Message ID": "74081743-0c71-4063-8c7b-a52e0c9460b3"
+  },
+  {
+    "User ID": 779,
+    "Timestamp (UTC)": "2017-02-02 17:33:52",
+    "Message Body": "My number is 0723506931. please have a review of my loan. I haven't defaulted and I have cleared my outstanding loan on the due date.",
+    "Name": "Karen Omondi",
+    "Message ID": "2653eca0-ce09-4267-be6e-881d0f4c7adf"
+  },
+  {
+    "User ID": 779,
+    "Timestamp (UTC)": "2017-02-02 17:29:24",
+    "Message Body": "Hi branch I have just cleared my  loan which was due today but unfortunately you have denied me. I haven't applied for a loan since December but your system says that I have applied for a loan last week. Please review my loan",
+    "Name": "Karen Omondi",
+    "Message ID": "f144e93b-be2b-4e98-922e-e483f201b80c"
+  },
+  {
+    "User ID": 1092,
+    "Timestamp (UTC)": "2017-02-03 18:53:47",
+    "Message Body": "I got only this number please help me",
+    "Name": "Isaiah Wanjiru",
+    "Message ID": "5fcf4082-1896-4d2c-bf44-85fe6cedd003"
+  },
+  {
+    "User ID": 1092,
+    "Timestamp (UTC)": "2017-02-01 19:02:59",
+    "Message Body": "My number is 0790898526 help me to validate it please so i can be able to access the loan",
+    "Name": "Isaiah Wanjiru",
+    "Message ID": "0b4cd30d-85a6-4818-85dc-cbcb47d1a67e"
+  },
+  {
+    "User ID": 1155,
+    "Timestamp (UTC)": "2017-02-03 7:01:34",
+    "Message Body": "Hello,our salaries have been delayed but hopefully will be paid today or tomorrow.",
+    "Name": "Elizabeth Cherono",
+    "Message ID": "89fc9473-195c-4e10-9836-e0434a063228"
+  },
+  {
+    "User ID": 1241,
+    "Timestamp (UTC)": "2017-02-01 12:43:51",
+    "Message Body": "Thanks Branch for being understanding ..have cleared my loan....God bless you",
+    "Name": "Jacqueline Maina",
+    "Message ID": "9ad5bae7-b498-4865-8c90-3e3c45c4aefc"
+  },
+  {
+    "User ID": 1245,
+    "Timestamp (UTC)": "2017-02-03 16:28:35",
+    "Message Body": "Hi, kindly can i have the batch number",
+    "Name": "Debra Obura",
+    "Message ID": "d0a11dee-7036-4d88-94f2-4aa8452ae858"
+  },
+  {
+    "User ID": 1245,
+    "Timestamp (UTC)": "2017-02-02 16:47:18",
+    "Message Body": "I have to clear by tomorrow please send me the batch number",
+    "Name": "Debra Obura",
+    "Message ID": "0eb08b89-3d41-4f0e-a1fa-9cf42fced62d"
+  },
+  {
+    "User ID": 1245,
+    "Timestamp (UTC)": "2017-02-02 16:19:26",
+    "Message Body": "I was at CRB offices and they haven't received your clearance batch number. Please send it to me so I can clear with them.",
+    "Name": "Debra Obura",
+    "Message ID": "f6fd58ee-15f6-4e4a-85a7-d170aa0ae6c9"
+  },
+  {
+    "User ID": 1354,
+    "Timestamp (UTC)": "2017-02-03 5:17:48",
+    "Message Body": "No need just expunge my details from the system",
+    "Name": "Jodi Ouma",
+    "Message ID": "f91b2e04-7cd7-4700-8904-686159804315"
+  },
+  {
+    "User ID": 1354,
+    "Timestamp (UTC)": "2017-02-02 21:33:40",
+    "Message Body": "Thank you for the loans i have benefitted from \"the branch\". Kindly expunge my details from your system. Its frustrating to be told to re apply in 7 days week in week out....it makes me look like a criminal. I will not be applying again.",
+    "Name": "Jodi Ouma",
+    "Message ID": "e1b60b5c-b3e6-4146-a4b3-b0d3887a5640"
+  },
+  {
+    "User ID": 1354,
+    "Timestamp (UTC)": "2017-02-02 12:02:10",
+    "Message Body": "My loan has been rejected because it was rejected recently, after 14days suspension am being suspended again for a further 7days",
+    "Name": "Jodi Ouma",
+    "Message ID": "c0ed302d-b2c1-4c56-b2ae-275b4a38e805"
+  },
+  {
+    "User ID": 1481,
+    "Timestamp (UTC)": "2017-02-03 1:52:01",
+    "Message Body": "Hello. Why can't you make the loan payment options more... like say a choice between weekly and monthly.. someone to choose when applying for the loans..  regards",
+    "Name": "Lynn Ouma",
+    "Message ID": "267617ac-b457-4c15-a1d6-efcaf46c5dac"
+  },
+  {
+    "User ID": 2035,
+    "Timestamp (UTC)": "2017-02-03 9:06:39",
+    "Message Body": "Ok",
+    "Name": "David Kemei",
+    "Message ID": "0d5674e3-cd72-46af-9715-53afadd0edb5"
+  },
+  {
+    "User ID": 2035,
+    "Timestamp (UTC)": "2017-02-02 18:25:13",
+    "Message Body": "Hi,sorry for the short text however Someone used my I.D and did register a line and took mshwari loan but venye nili realize nilipigia safaricom customer care and i did the payment  and cleared a bill of 299now i dont have  any what is the way forward.",
+    "Name": "David Kemei",
+    "Message ID": "85bdea57-72f6-4321-bba8-174fa6498013"
+  },
+  {
+    "User ID": 2035,
+    "Timestamp (UTC)": "2017-02-02 17:55:39",
+    "Message Body": "Someone used",
+    "Name": "David Kemei",
+    "Message ID": "e3e2be47-5fae-46a1-8439-c0d9250c4c93"
+  },
+  {
+    "User ID": 2035,
+    "Timestamp (UTC)": "2017-02-02 5:59:11",
+    "Message Body": "What am i supposed to do after paying in order to re",
+    "Name": "David Kemei",
+    "Message ID": "609652bd-949e-44ef-90ea-6846aa920458"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 16:06:23",
+    "Message Body": "Any response to my above queries please???",
+    "Name": "Amber Owino",
+    "Message ID": "308a93d1-50f9-4b10-bfb2-88a6c3869264"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:58:00",
+    "Message Body": "Kindly advise what sms are not in my phone....",
+    "Name": "Amber Owino",
+    "Message ID": "8a100688-d341-4ae2-ad9c-002e8a1adbc8"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:52:19",
+    "Message Body": "And have no current loan... Im upto date ...",
+    "Name": "Amber Owino",
+    "Message ID": "f7620c04-5486-4b26-bdbe-1d5cd717f2f0"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:51:32",
+    "Message Body": "If there is a way u can check the mpesa sms in my phone.. Check and see all transactions sms are available ....and mpesa account is very active",
+    "Name": "Amber Owino",
+    "Message ID": "1ad34f13-8093-4e02-9086-5c9694272fb6"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:50:24",
+    "Message Body": "All my Mpesa sms are stored in sim card for long period ...and none has been deleted...",
+    "Name": "Amber Owino",
+    "Message ID": "756256c7-cd4c-421b-b681-bf9e0f00dc7f"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:47:10",
+    "Message Body": "What SMSs should i accumulate on my phone?",
+    "Name": "Amber Owino",
+    "Message ID": "fe6a9929-9ab6-4d0b-86a6-2a940793e345"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:37:22",
+    "Message Body": "Why has my loan application been rejected and i have never defaulted on any repayments and l always pay on time?",
+    "Name": "Amber Owino",
+    "Message ID": "45d2fd86-256f-4112-97e4-d76c8169094e"
+  },
+  {
+    "User ID": 2126,
+    "Timestamp (UTC)": "2017-02-01 15:33:06",
+    "Message Body": "Why has loan been rejected?",
+    "Name": "Amber Owino",
+    "Message ID": "9558654f-1a70-42c6-b744-6a50801c8132"
+  },
+  {
+    "User ID": 2517,
+    "Timestamp (UTC)": "2017-02-02 3:20:38",
+    "Message Body": "Ok thanks",
+    "Name": "Rhonda Waiguru",
+    "Message ID": "e708326c-f0ba-43d8-95f9-dab6d0b4a2c4"
+  },
+  {
+    "User ID": 2517,
+    "Timestamp (UTC)": "2017-02-01 18:06:50",
+    "Message Body": "I forwarded my certificate of clearance from trans union and even you replied that my account was cleared and you gave me a loan  of kshs 250 which I cleared. What is happening to my account?",
+    "Name": "Rhonda Waiguru",
+    "Message ID": "b453e94e-9310-484d-bf35-7b69dc3554b2"
+  },
+  {
+    "User ID": 2780,
+    "Timestamp (UTC)": "2017-02-01 0:05:55",
+    "Message Body": "I cant access your services",
+    "Name": "Jennifer Ochieng'",
+    "Message ID": "e6a00211-0997-4022-afd1-7360c4704f6d"
+  },
+  {
+    "User ID": 2788,
+    "Timestamp (UTC)": "2017-02-02 13:20:16",
+    "Message Body": "ok",
+    "Name": "Barbara Oloo",
+    "Message ID": "916a90d9-8a26-49a4-a1bb-e89fbe6a6c84"
+  },
+  {
+    "User ID": 2788,
+    "Timestamp (UTC)": "2017-02-02 12:54:13",
+    "Message Body": "I promise to finish my loan by this month",
+    "Name": "Barbara Oloo",
+    "Message ID": "09725652-6473-4724-9661-b4bb43572a1b"
+  },
+  {
+    "User ID": 2884,
+    "Timestamp (UTC)": "2017-02-01 7:57:12",
+    "Message Body": "The messages are on my line...",
+    "Name": "Joshua Ochieng'",
+    "Message ID": "c77688fb-1932-425a-9ce3-b01e543b7a2d"
+  },
+  {
+    "User ID": 2884,
+    "Timestamp (UTC)": "2017-02-01 7:56:47",
+    "Message Body": "I hv my transaction messages with me y am i not approved to this time? I urgently need the cash",
+    "Name": "Joshua Ochieng'",
+    "Message ID": "1411c826-372b-419c-806b-a4b3e61091c2"
+  },
+  {
+    "User ID": 2926,
+    "Timestamp (UTC)": "2017-02-03 22:42:26",
+    "Message Body": "Hi! I hope this will take you well, I cleared my loan",
+    "Name": "Holly Kipchirchir",
+    "Message ID": "0cdd13e0-2604-4d74-a9cb-c72f82056e13"
+  },
+  {
+    "User ID": 2983,
+    "Timestamp (UTC)": "2017-02-01 10:49:28",
+    "Message Body": "Another 7 days what! For the third time now.",
+    "Name": "Lee Omondi",
+    "Message ID": "f0f721c5-d9a1-4838-a658-2d524cf2ae6f"
+  },
+  {
+    "User ID": 3056,
+    "Timestamp (UTC)": "2017-02-01 13:57:40",
+    "Message Body": "Hey Branch i am sorry for being late in payment bt i will pay on Monday 6/2/2017 bt the reason of late repayment is due to maturing of cheque because it was signed late bt i apologize n opz it will never happen again.",
+    "Name": "Katie Odongo",
+    "Message ID": "cfbb1190-04d4-466c-8754-929cdef776f7"
+  },
+  {
+    "User ID": 3091,
+    "Timestamp (UTC)": "2017-02-03 8:11:39",
+    "Message Body": "I'll pay the 32/= together with Monday's 566/=",
+    "Name": "James Kandie",
+    "Message ID": "a8a05b76-c267-4b1e-959c-cae1687785db"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 15:22:22",
+    "Message Body": "I appreciate for da follow-up u made tanx alot",
+    "Name": "Noah Omondi",
+    "Message ID": "377fe05f-ec16-4bdf-8bc1-498b10572e16"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 13:28:40",
+    "Message Body": "How long does it for me to get da batch number cz hve cleared ma loan on 31st",
+    "Name": "Noah Omondi",
+    "Message ID": "72f87ab9-567d-4a4a-a4da-4df2bf8b4bcb"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 8:58:06",
+    "Message Body": "Within aweek,specifically when plz",
+    "Name": "Noah Omondi",
+    "Message ID": "45390955-2b58-4188-90ab-a39cdb68bbe2"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 8:57:16",
+    "Message Body": "72hrs",
+    "Name": "Noah Omondi",
+    "Message ID": "776d18ed-223a-469f-a0a6-d73824561ae4"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 8:56:44",
+    "Message Body": "Hope da clearance last for 72grs",
+    "Name": "Noah Omondi",
+    "Message ID": "3d719bde-2413-4c4a-a1ce-f047c2ade114"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 7:39:05",
+    "Message Body": "Dis is keynan did u shared my details with crb",
+    "Name": "Noah Omondi",
+    "Message ID": "481d7986-bf6b-496e-ae7c-ddf999bbbb8d"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-03 7:19:54",
+    "Message Body": "Can I get batch number plz",
+    "Name": "Noah Omondi",
+    "Message ID": "8732f9e3-5aeb-438e-8eab-dbcecf22e1c0"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-02 11:54:53",
+    "Message Body": "Can I have direct contact thus I keep untouched with da concern authorities",
+    "Name": "Noah Omondi",
+    "Message ID": "9fd79e5c-ab2d-4d3b-8b60-44012e1631d0"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-02 11:52:37",
+    "Message Body": "Am still getting from another financial institutions dat I owe branch 1068 n have already paid dat amount",
+    "Name": "Noah Omondi",
+    "Message ID": "5683c256-913b-400d-90bb-43dc859abf75"
+  },
+  {
+    "User ID": 3112,
+    "Timestamp (UTC)": "2017-02-02 11:40:55",
+    "Message Body": "Dis is keynan,can u kindly forward ma details to crb hve got stucked somewhere",
+    "Name": "Noah Omondi",
+    "Message ID": "bdc188b0-d955-4f4d-aa1c-784cf05fce27"
+  },
+  {
+    "User ID": 3170,
+    "Timestamp (UTC)": "2017-02-01 14:51:36",
+    "Message Body": "sorry for that but i am still  searching for the money but will be paying the loan soon as the deadline i had set passed but i am doing all i can to settle the loan",
+    "Name": "Debbie Kandie",
+    "Message ID": "f7432dc4-f3c7-45d1-ad91-7ad57d6f48ab"
+  },
+  {
+
+    "User ID": 3643,
+    "Timestamp (UTC)": "2017-02-01 11:05:59",
+    "Message Body": "Alright. Thanks.",
+    "Name": "Scott Wambui",
+    "Message ID": "1318aaa2-10e6-4fa6-87bb-d6c3c1ce078a"
+  },
+  {
+
+    "User ID": 3701,
+    "Timestamp (UTC)": "2017-02-01 12:27:31",
+    "Message Body": "Do I have any other loan that I didn't pay",
+    "Name": "Jill Koech",
+    "Message ID": "6b9ee248-66c3-45df-9b96-91c07ff82ab4"
+  },
+  {
+
+    "User ID": 3701,
+    "Timestamp (UTC)": "2017-02-01 12:26:40",
+    "Message Body": "Why don't you want to give me a loan",
+    "Name": "Jill Koech",
+    "Message ID": "10fe507d-0cbb-41ce-adca-81bb1179890b"
+  },
+  {
+
+    "User ID": 3725,
+    "Timestamp (UTC)": "2017-02-01 8:12:05",
+    "Message Body": "Sorry for the delay i block my mpesa pin but now its okey will pay by end of today",
+    "Name": "Nicole Kibet",
+    "Message ID": "c4614969-324d-4254-89a5-82273effdd1e"
+  },
+  {
+
+    "User ID": 3775,
+    "Timestamp (UTC)": "2017-02-03 9:57:48",
+    "Message Body": "Hi Branch, why do i have the text that my payment is late while its due today? 3feb 2017",
+    "Name": "Lisa Obura",
+    "Message ID": "a55c5c6f-b0e2-443d-8415-3070d552245b"
+  },
+  {
+
+    "User ID": 3897,
+    "Timestamp (UTC)": "2017-02-03 18:42:29",
+    "Message Body": "Thanks for understanding my situation I look forward to settling my loans on the time I have promised",
+    "Name": "Joel Kiplagat",
+    "Message ID": "e12bac55-c3b2-46dc-9e0f-ac45260fd14d"
+  },
+  {
+
+    "User ID": 3897,
+    "Timestamp (UTC)": "2017-02-03 8:15:33",
+    "Message Body": "I'm expecting to clear by date 8/2/2017",
+    "Name": "Joel Kiplagat",
+    "Message ID": "ded7e64c-765b-4150-af16-21be54181769"
+  },
+  {
+
+    "User ID": 3897,
+    "Timestamp (UTC)": "2017-02-03 7:56:41",
+    "Message Body": "I've settled many of your loans before please don't spoil my credit report",
+    "Name": "Joel Kiplagat",
+    "Message ID": "f81a3516-91b8-4af0-a761-dfeded573b66"
+  },
+  {
+
+    "User ID": 3897,
+    "Timestamp (UTC)": "2017-02-03 7:46:47",
+    "Message Body": "Hi branch kindly let me sort out the issue in a few days... I remain committed to settling my loans on time despite a few constraints",
+    "Name": "Joel Kiplagat",
+    "Message ID": "718421bf-604e-4893-9428-0d7188080379"
+  },
+  {
+
+    "User ID": 3900,
+    "Timestamp (UTC)": "2017-02-02 8:34:54",
+    "Message Body": "Thanks branch had missed this",
+    "Name": "Matthew Langat",
+    "Message ID": "f93e2c54-52ac-49d8-96c7-21d1c9cedf43"
+  },
+  {
+
+    "User ID": 4178,
+    "Timestamp (UTC)": "2017-02-01 4:10:13",
+    "Message Body": "Am sorry nlichelewa kulipa loan guys siyo kawaida yangu kuchelewesha lakini ni accident nlioata na mtoto wangu akachomeka na maji moto,naomba msamaha mwanzo mmeniinua sana kibiashara na ni ombi langu mtaendelea kunikopesha loan na tena ningeomba tafadhali don't lower loan limit please.will pay my loan on Friday, good day",
+    "Name": "Jennifer Odongo",
+    "Message ID": "849952c4-29fc-4909-a6bb-66c0d1a2f1d8"
+  },
+  {
+
+    "User ID": 4373,
+    "Timestamp (UTC)": "2017-02-03 7:23:12",
+    "Message Body": "When am I qualified to get another loan",
+    "Name": "Jessica Kimani",
+    "Message ID": "5d401eae-3b4d-4fbd-be7b-205e5d4e59dd"
+  },
+  {
+
+    "User ID": 4442,
+    "Timestamp (UTC)": "2017-02-02 15:31:06",
+    "Message Body": "Hi! Am sure acc details are correct. Have not received the loan yet...",
+    "Name": "Ana Kimetto",
+    "Message ID": "06e639bd-6428-446f-9779-e1b70fad0d2e"
+  },
+  {
+
+    "User ID": 4442,
+    "Timestamp (UTC)": "2017-02-02 14:22:54",
+    "Message Body": "I require a feedback plz",
+    "Name": "Ana Kimetto",
+    "Message ID": "a3cc3d45-5aaf-4031-8a89-54270ecd43fc"
+  },
+  {
+
+    "User ID": 4442,
+    "Timestamp (UTC)": "2017-02-02 13:07:30",
+    "Message Body": "Did sent the C Certificate",
+    "Name": "Ana Kimetto",
+    "Message ID": "2bc23a0e-eec1-4b67-838b-0c54223433e5"
+  },
+  {
+
+    "User ID": 4481,
+    "Timestamp (UTC)": "2017-02-03 6:41:44",
+    "Message Body": "R u guys going to punish me for ever?",
+    "Name": "Patrick Kemei",
+    "Message ID": "a7ae048c-f72e-4dff-8536-9e32b1e49bcf"
+  },
+  {
+
+    "User ID": 4522,
+    "Timestamp (UTC)": "2017-02-01 11:41:28",
+    "Message Body": "Meanings",
+    "Name": "Samantha Karanja",
+    "Message ID": "dee54664-0e02-486a-9dd9-a65acdf68b8d"
+  },
+  {
+
+    "User ID": 4708,
+    "Timestamp (UTC)": "2017-02-02 5:47:09",
+    "Message Body": "I cleared last year for how long",
+    "Name": "Dana Kiptum",
+    "Message ID": "da5f2829-0089-42ac-a995-f4f7a1be45e1"
+  },
+  {
+
+    "User ID": 5000,
+    "Timestamp (UTC)": "2017-02-01 20:56:04",
+    "Message Body": "Hi Branch, am among your best beneficiaries of the Tala platform. However,  I have hit a 'dead-end' situation on my payment which is late for almost 5weeks after I took the loan. It has been caused by a temporal stagnation from my employment that was abruptly halted due to funding issues. Need to request for a little time extra as I commit myself to clear this loan I have. Kindly respond we agree on an amicable plan if payment. My Tel: 0723 496 592. Waiting for your feedback.   Regards,  Kenedy Sifuma",
+    "Name": "Brett Chemweno",
+    "Message ID": "9ea84539-016b-43a8-a51c-094291f09ce4"
+  },
+  {
+
+    "User ID": 5297,
+    "Timestamp (UTC)": "2017-02-03 15:38:22",
+    "Message Body": "it can't be 1264 had paid 400 earlier pls update your systems and give the right balance",
+    "Name": "Joseph Odera",
+    "Message ID": "133eac44-04b8-4cf2-b339-80039fb4111c"
+  },
+  {
+
+    "User ID": 5480,
+    "Timestamp (UTC)": "2017-02-03 12:28:31",
+    "Message Body": "Hi branch,  Yes I have a problem which I thought it could have been through by now but it's not through. I have not been paid yet but kindly allow me to pay by next week please.",
+    "Name": "Amanda Chebet",
+    "Message ID": "9a72acb0-73bf-416f-a7b3-6e6698f74ce6"
+  },
+  {
+
+    "User ID": 5696,
+    "Timestamp (UTC)": "2017-02-03 13:00:34",
+    "Message Body": "Iam sending the full amount today just got busy",
+    "Name": "Felicia Oluoch",
+    "Message ID": "9efcf8aa-d1b3-4cf6-a052-f39bd0802d76"
+  },
+  {
+
+    "User ID": 5724,
+    "Timestamp (UTC)": "2017-02-03 6:53:55",
+    "Message Body": "Some lady from brunch calls me n starts to abuse me just because i said av paid a total of 1000 which she claims from her side av paid on 600 .that my loan is 18394 n yet it shows hear clearly its 17994 .my question is ,is that how people who have defaulted are addressed coz surely av started paying ? N av introduced people who are paying so why look down on orhers",
+    "Name": "Julie Waithaka",
+    "Message ID": "63c6fc72-d58b-4f01-b49d-5a800e5f238e"
+  },
+  {
+   
+    "User ID": 6054,
+    "Timestamp (UTC)": "2017-02-03 15:46:03",
+    "Message Body": "Hi, l have paid my loan on time but, my loan has been rejected. Why has it been rejected?",
+    "Name": "Renee Odhiambo",
+    "Message ID": "8bc1cf7c-c26e-4896-939c-bf5b32c41505"
+  },
+  {
+
+    "User ID": 6326,
+    "Timestamp (UTC)": "2017-02-03 13:32:47",
+    "Message Body": "Can't login",
+    "Name": "Laura Koech",
+    "Message ID": "3634bce2-0257-4f6d-b311-81112e1a0722"
+  },
+  {
+
+    "User ID": 6515,
+    "Timestamp (UTC)": "2017-02-02 2:12:24",
+    "Message Body": "The weekly text rem are a nuisance",
+    "Name": "Tamara Oyoo",
+    "Message ID": "c1101e51-3d1a-4b56-8342-7cb80e9755fb"
+  },
+  {
+
+    "User ID": 6515,
+    "Timestamp (UTC)": "2017-02-02 2:11:40",
+    "Message Body": "The weekly text rimindance",
+    "Name": "Tamara Oyoo",
+    "Message ID": "68ecbf4a-fd73-4cdb-bfe2-0286f53861d8"
+  },
+  {
+
+    "User ID": 6515,
+    "Timestamp (UTC)": "2017-02-02 2:09:54",
+    "Message Body": "Hi..please I can pay my loan in a month once..adjust your payment schedule and give options whether to pay weekly or monthly..",
+    "Name": "Tamara Oyoo",
+    "Message ID": "c8577fb7-8f4b-48fc-8ebf-76c5056a471b"
+  },
+  {
+
+    "User ID": 6884,
+    "Timestamp (UTC)": "2017-02-01 19:40:52",
+    "Message Body": "OK I have paid all of it",
+    "Name": "Jennifer Ogutu",
+    "Message ID": "52459c92-e520-4526-a692-4d017406fcda"
+  },
+  {
+
+    "User ID": 7140,
+    "Timestamp (UTC)": "2017-02-02 13:06:55",
+    "Message Body": "Why cant i have a loan now yet i have cleared my previous loan",
+    "Name": "Tyler Kiplimo",
+    "Message ID": "ff442a4e-7857-41ad-b846-ac8414ca82a7"
+  },
+  {
+
+    "User ID": 7457,
+    "Timestamp (UTC)": "2017-02-01 22:26:17",
+    "Message Body": "How do I get a loan",
+    "Name": "Alex Kiplimo",
+    "Message ID": "68f27799-0782-4793-b907-86dae2b6b38d"
+  },
+  {
+  
+    "User ID": 7725,
+    "Timestamp (UTC)": "2017-02-02 10:25:44",
+    "Message Body": "Dear Branch, sorry for late payment of my loan. This is due to unavoidable circumstances but I strive to clear the loan before Wednesday 8th feb next week",
+    "Name": "Thomas Kimani",
+    "Message ID": "911e741d-5f47-4e39-8e14-371890014890"
+  },
+  {
+
+    "User ID": 7812,
+    "Timestamp (UTC)": "2017-02-01 10:19:24",
+    "Message Body": "Hi Branch,by 7th i promise to make some payment to reduce my loan.",
+    "Name": "Jacqueline Odongo",
+    "Message ID": "46878fb4-6e7b-41a6-8c90-7c1b6589e4a8"
+  },
+  {
+
+    "User ID": 7837,
+    "Timestamp (UTC)": "2017-02-01 8:56:57",
+    "Message Body": "So in short  because i don't  have the SMS  that the e reason.",
+    "Name": "Shelby Kimutai",
+    "Message ID": "877fe7db-9af8-4508-acac-34ebd836e8e7"
+  },
+  {
+
+    "User ID": 7837,
+    "Timestamp (UTC)": "2017-02-01 6:07:30",
+    "Message Body": "Why was my loan request rejected and i have been paying on time",
+    "Name": "Shelby Kimutai",
+    "Message ID": "4f8a3dbd-4059-4c31-a649-f4c60300b851"
+  },
+  {
+
+    "User ID": 7944,
+    "Timestamp (UTC)": "2017-02-01 7:37:00",
+    "Message Body": "Dear Branch,Am experiencing difficult in payments but will deposit tomorrow evening.Thank you",
+    "Name": "Lindsay Owino",
+    "Message ID": "6a346e12-d945-45c4-897a-75675e97dff5"
+  },
+  {
+
+    "User ID": 8014,
+    "Timestamp (UTC)": "2017-02-02 15:36:51",
+    "Message Body": "Hi ,whats the 7more days penalty for ?be frank n specify.I paid the previous loan on time.",
+    "Name": "Heather Omondi",
+    "Message ID": "ac5e5c1d-772e-488f-9c7d-655936ae772a"
+  },
+  {
+
+    "User ID": 8101,
+    "Timestamp (UTC)": "2017-02-01 9:43:04",
+    "Message Body": "I have been trying this app for a long period... When i apply.. Am told try after 7 days...iy has become a song...i this app real or am waisting mi time and bundles for nothing?",
+    "Name": "Christopher Ogada",
+    "Message ID": "40a3adc4-d925-46fc-813d-59af2b43f09c"
+  },
+  {
+   
+    "User ID": 8125,
+    "Timestamp (UTC)": "2017-02-01 2:20:12",
+    "Message Body": "Will pay be4 15th",
+    "Name": "Jeffrey Omollo",
+    "Message ID": "831dfa2a-6dba-4340-b5e5-a4e4493de2f1"
+  },
+  {
+
+    "User ID": 8392,
+    "Timestamp (UTC)": "2017-02-02 13:51:56",
+    "Message Body": "I been with u For long an I made amistake but I won't repeat it agian I was having a sick ness....",
+    "Name": "Edward Oduor",
+    "Message ID": "812bc3c9-b2e9-447c-a368-f1788f1c5900"
+  },
+  {
+
+    "User ID": 8647,
+    "Timestamp (UTC)": "2017-02-01 15:53:24",
+    "Message Body": "Sorry,I meant December 2016",
+    "Name": "Michael Ndung'u",
+    "Message ID": "a0ca294e-78fc-4449-97b8-67690729f542"
+  },
+  {
+
+    "User ID": 8647,
+    "Timestamp (UTC)": "2017-02-01 15:52:35",
+    "Message Body": "Hi Branch...now my Application was rejected recently on 1st Feb 2017. I had borrowed Sh.25,000 in December 2015 of which I was slightly late in paying but I payed the whole loan today only to be dissapointed when I apply for another. It says I reapply again in 7days which is too long for me at the moment because I desperately need the cash. How can you assist?",
+    "Name": "Michael Ndung'u",
+    "Message ID": "f9660bb7-c1bc-45eb-85df-c5af86d6ae52"
+  }
+]

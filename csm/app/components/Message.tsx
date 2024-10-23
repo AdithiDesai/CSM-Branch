@@ -1,8 +1,8 @@
 import React from "react";
 export interface Message {
-  content: String;
-  time: String;
-  internal: Boolean;
+  content: string;
+  time: string;
+  internal: boolean;
 }
 
 function Message(props: Message) {
