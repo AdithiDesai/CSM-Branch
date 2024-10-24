@@ -4,16 +4,32 @@ import { FormEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { Toaster, toast } from "sonner";
 
 function page() {
   const router = useRouter();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    UUID: string;
+    role: "agent" | "customer";
+  }>({
     name: "",
     UUID: generateUUID(),
+    role: "agent",
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSelectElementChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     event.preventDefault();
 
     const { name, value } = event.target;
@@ -35,9 +51,11 @@ function page() {
 
       sessionStorage.setItem("UUID", formData.UUID);
       sessionStorage.setItem("NAME", formData.name);
+      sessionStorage.setItem("ROLE", formData.role);
       sessionStorage.setItem("DBID", data["dbId"]);
 
-      router.push("/chat");
+      if (formData.role === "agent") router.push("/chat");
+      else router.push("/support");
     }
   };
 
@@ -46,7 +64,11 @@ function page() {
   }
   useEffect(() => {
     if (sessionStorage.getItem("UUID")) {
-      redirect("/chat");
+      if (sessionStorage.getItem("ROLE") === "agent") {
+        router.push("/chat");
+      } else {
+        router.push("/support");
+      }
     }
   });
 
@@ -60,7 +82,7 @@ function page() {
 
   return (
     <div className="bg-[#1e1f22] w-full h-full grid place-items-center">
-      <div className="bg-[#2b2d31] w-3/12 h-2/6 flex flex-col items-center p-3 rounded-lg">
+      <div className="bg-[#2b2d31] flex flex-col items-center p-3 rounded-lg">
         <svg
           className="mt-6"
           fill="#cbd4f0"
@@ -81,16 +103,25 @@ function page() {
             onChange={handleInputChange}
             value={formData.name}
             className="ml-3 focus:border-0 focus:outline-0 bg-[#1e1f22] rounded-md p-2 mb-6 mt-6"
-            placeholder="Agent Name"
+            placeholder="Username"
           />
           <input required type="hidden" name="UUID" value={formData.UUID} />
+          <select
+            name="role"
+            onChange={handleSelectElementChange}
+            value={formData.role}
+            className="ml-3 focus:border-0 focus:outline-0 bg-[#1e1f22] rounded-md p-2 mb-6"
+          >
+            <option value="agent">Agent</option>
+            <option value="customer">Customer</option>
+          </select>
           <button
             className="bg-[#cbd4f0] text-black p-2 rounded-md"
             type="submit"
             onClick={changeState}
           >
             {buttonState === "normal" ? (
-              "Create Agent"
+              `Create ${formData.role === "agent" ? "Agent" : "Customer"}`
             ) : (
               <svg
                 aria-hidden="true"

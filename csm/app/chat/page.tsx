@@ -15,7 +15,10 @@ import Message from "../components/Message";
 import MessageCard from "../components/MessageCard";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useCollectionData } from "react-firebase-hooks/firestore";
+import {
+  useCollection,
+  useCollectionData,
+} from "react-firebase-hooks/firestore";
 import { firestore } from "../api/configs/firebaseconfig";
 import {
   arrayUnion,
@@ -71,7 +74,6 @@ function page() {
   const [agentname, setName] = useState("");
   const [agentUUID, setUUID] = useState("");
   const router = useRouter();
-  const [messagesByUser, setMessagesByUser] = useState<any>(null);
   const [conversationMessages, setCoversationMessages] = useState([]);
 
   const [currentConversationId, setCurrentConversationId] = useState("");
@@ -82,19 +84,26 @@ function page() {
   // Remember to scroll this div into view on message send
   // if(dummy.current){dummy.current.scrollIntoView({behaviour:'smooth'})}
 
+  // Get all conversations where there is no agent assigned
   const q = query(
-    collection(firestore, "newMessages"),
-    orderBy("timestamp", "asc")
+    collection(firestore, "conversations"),
+    where("agentuuid", "==", "")
   );
+  const [messages] = useCollection(q);
 
-  const [messages] = useCollectionData(q);
+  // Get all conversations where the agent is involved
+  const q2 = query(
+    collection(firestore, "conversations"),
+    where("agentuuid", "==", agentUUID)
+  );
+  const [conversations] = useCollection(q2);
 
   const q3 = query(collection(firestore, "agents"));
 
-  const [agentsCount] = useCollectionData(q3);
+  const [agentsCount] = useCollection(q3);
 
   const q4 = query(collection(firestore, "archivedConversations"));
-  const [archivedChats] = useCollectionData(q4);
+  const [archivedChats] = useCollection(q4);
 
   useEffect(() => {
     if (!sessionStorage.getItem("UUID")) {
@@ -103,20 +112,16 @@ function page() {
 
     const name = sessionStorage.getItem("NAME");
     const uuid = sessionStorage.getItem("UUID");
+    const role = sessionStorage.getItem("ROLE");
+
+    if (role != "agent") {
+      redirect("/support");
+    }
 
     if (name && uuid) {
       setName(name);
       setUUID(uuid);
     }
-
-    const getMessages = async () => {
-      const messages = (
-        await fetch("/api/fetchMessages", { method: "POST" })
-      ).json();
-      setMessagesByUser(await messages);
-    };
-
-    getMessages();
 
     const unsubscribe = fetchConversation(
       setCoversationMessages,
@@ -126,12 +131,6 @@ function page() {
 
     return () => unsubscribe();
   }, [currentConversationId]);
-
-  const q2 = query(
-    collection(firestore, "conversations"),
-    where("agentuuid", "==", agentUUID)
-  );
-  const [conversations] = useCollectionData(q2);
 
   const handleArchivedMessage = async (msg: any, senderuuid: string) => {
     // Set the current conversation to archived
@@ -152,88 +151,10 @@ function page() {
     }
   };
 
-  const transitionChat = async (usermessage: any) => {
-    // Check weather the conversation between the two exists if not
-    // Create a conversation between the agent and the customer
-    // After the conversation has been created, the message should then be deleted from the Messages Document and moved to Conversations
-    setisCurrentArchived(false);
-    let conversationid;
-    let senderid;
-
-    if (usermessage.senderuuid) {
-      senderid = usermessage.senderid;
-      conversationid = agentUUID + usermessage.senderuuid;
-    } else {
-      senderid = usermessage.userid;
-      conversationid = agentUUID + usermessage.userid;
-    }
-
-    setCurrentConversationId(conversationid);
-
-    try {
-      const conversationRef = doc(firestore, "conversations", conversationid);
-      const conversationSnap = await getDoc(conversationRef);
-
-      if (!conversationSnap.exists()) {
-        // create conversation document for the two
-        const res = await setDoc(conversationRef, {
-          messages: [
-            {
-              senderuuid: senderid,
-              content: usermessage.content,
-              timestamp: usermessage.timestamp,
-            },
-          ],
-        });
-
-        // delete the message from the Messages Document
-        let newMessageRef = collection(firestore, "newMessages");
-        let q = query(
-          newMessageRef,
-          where("messageid", "==", usermessage.messageid)
-        );
-
-        getDocs(q)
-          .then((snapshot) => {
-            snapshot.forEach((doc) => {
-              deleteDoc(doc.ref)
-                .then(() => {
-                  console.log("Message Deleted from newMessages");
-                })
-                .catch((error) => {
-                  console.log("Error: " + error);
-                });
-            });
-          })
-          .catch((error) => {
-            console.log("Error: " + error);
-          });
-
-        let agentChat = await updateDoc(conversationRef, {
-          agentuuid: agentUUID,
-          senderuuid: usermessage.userid,
-          username: usermessage.name,
-          timestarted: serverTimestamp(),
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const handleChatTransition = (usermessage: any) => {
-    let conversationid;
-    let senderid;
-
-    if (usermessage.senderuuid) {
-      senderid = usermessage.senderid;
-      conversationid = agentUUID + usermessage.senderuuid;
-    } else {
-      senderid = usermessage.userid;
-      conversationid = agentUUID + usermessage.userid;
-    }
+    console.log({ usermessage: usermessage.data() });
     setisCurrentArchived(false);
-    setCurrentConversationId(conversationid);
+    setCurrentConversationId(usermessage.id);
     setCurrentUsername(usermessage.username);
   };
 
@@ -267,7 +188,10 @@ function page() {
         currentConversationId
       );
 
-      await updateDoc(conversationRef, { messages: arrayUnion(newData) });
+      await updateDoc(conversationRef, {
+        messages: arrayUnion(newData),
+        agentuuid: agentUUID,
+      });
       setMessageData({ content: "" });
     } catch (error) {
       console.log(error);
@@ -404,12 +328,16 @@ function page() {
                 </Accordion.Trigger>
                 <Accordion.Content className={styles.AccordionContent}>
                   {messages &&
-                    messages.map((msg, index) => (
-                      <div key={msg.userid} onClick={() => transitionChat(msg)}>
+                    messages.docs.map((msg, index) => (
+                      <div
+                        key={msg.id}
+                        onClick={() => handleChatTransition(msg)}
+                      >
                         <MessageCard
                           assigned={false}
-                          displayName={msg.name}
-                          content={msg.content}
+                          displayName={msg.data().username}
+                          // content={"Blah"}
+                          content={msg.data().messages[0]["content"]}
                         />
                       </div>
                     ))}
@@ -419,17 +347,18 @@ function page() {
 
             {/* Normal Conversations */}
             {conversations &&
-              conversations.map((msg, index) => (
+              conversations.docs.map((msg, index) => (
                 <div
-                  key={index}
+                  key={msg.id}
                   onClick={() => {
                     handleChatTransition(msg);
                   }}
                 >
                   <MessageCard
                     assigned={true}
-                    displayName={msg.username}
-                    content={msg.messages[0]["content"]}
+                    displayName={msg.data().username}
+                    // content={"Blah"}
+                    content={msg.data().messages[0]["content"]}
                   />
                 </div>
               ))}
@@ -462,17 +391,18 @@ function page() {
                   </Accordion.Trigger>
                   <Accordion.Content className={styles.AccordionContent}>
                     {archivedChats &&
-                      archivedChats.map((msg, index) => (
+                      archivedChats.docs.map((msg, index) => (
                         <div
                           key={index}
                           onClick={() => {
-                            handleArchivedMessage(msg, msg.senderuuid);
+                            handleArchivedMessage(msg, msg.data().senderuuid);
                           }}
                         >
                           <MessageCard
                             assigned={true}
-                            displayName={msg.username}
-                            content={msg.messages[0]["content"]}
+                            displayName={msg.data().username}
+                            // content={"Blah"}
+                            content={msg.data().messages[0]["content"]}
                           />
                         </div>
                       ))}
@@ -510,7 +440,7 @@ function page() {
         </div>
       </div>
       <div
-        className="col-span-3 h-full p-3 bg-[#2b2d31] rounded-md overflow-hidden"
+        className="col-span-3 h-full p-3 bg-[#2b2d31] rounded-md overflow-hidden grid grid-rows-[auto_auto_1fr] gap-4"
         id="rightPane"
       >
         <div id="TopPanel">
@@ -545,44 +475,46 @@ function page() {
               <div className="flex flex-row items-center gap-3">
                 <div className={[styles.glow].join(" ")}></div>
                 <span className="text-sm opacity-50 font">
-                  {agentsCount?.length} online
+                  {agentsCount ? agentsCount.docs.length : 0} online
                 </span>
               </div>
             </div>
           </div>
         </div>
         <hr style={{ margin: "auto" }} className="opacity-50 w-11/12 p-3" />
-        <div id="MessagesBody" className="h-5/6 flex flex-col overflow-y-auto">
-          {conversationItems}
-        </div>
-        <div id="InputBox" className="w-11/12 " style={{ margin: "auto" }}>
-          <div className="flex flex-row bg-[#1e1f22] rounded-xl p-2">
-            <PlusCircle color="#879099" size={28} />
-            <form
-              className="w-11/12 flex flex-row items-center"
-              onSubmit={handleMessageSend}
-            >
-              <input
-                name="content"
-                type="text"
-                className="bg-transparent ml-3 focus:border-0 focus:outline-0 w-11/12"
-                placeholder="Type your message"
-                onChange={handleInputChange}
-                value={messageData.content}
-              />
-              <button className="ml-4" type="submit">
-                <PaperPlaneTilt
-                  className=""
-                  color="#879099"
-                  weight="fill"
-                  size={28}
+        <div className="container px-9 grid grid-rows-[1fr_auto] overflow-y-auto">
+          <div id="MessagesBody" className="flex flex-col overflow-y-auto">
+            {conversationItems}
+          </div>
+          <div id="InputBox" className="w-11/12 " style={{ margin: "auto" }}>
+            <div className="flex flex-row bg-[#1e1f22] rounded-xl p-2">
+              <PlusCircle color="#879099" size={28} />
+              <form
+                className="w-11/12 flex flex-row items-center"
+                onSubmit={handleMessageSend}
+              >
+                <input
+                  name="content"
+                  type="text"
+                  className="bg-transparent ml-3 focus:border-0 focus:outline-0 w-11/12"
+                  placeholder="Type your message"
+                  onChange={handleInputChange}
+                  value={messageData.content}
                 />
-              </button>
-            </form>
+                <button className="ml-4" type="submit">
+                  <PaperPlaneTilt
+                    className=""
+                    color="#879099"
+                    weight="fill"
+                    size={28}
+                  />
+                </button>
+              </form>
 
-            <div className="flex flex-row">
-              <Smiley className="mr-3" color="#879099" size={28} />
-              <Paperclip color="#879099" size={28} />
+              <div className="flex flex-row">
+                <Smiley className="mr-3" color="#879099" size={28} />
+                <Paperclip color="#879099" size={28} />
+              </div>
             </div>
           </div>
         </div>
