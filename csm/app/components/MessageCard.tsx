@@ -21,7 +21,10 @@ function MessageCard(props: MessageInfo) {
       <div>
         <span className="text-xl font-bold">{props.displayName}</span>
         <br />
-        <span className="opacity-60 text-sm"> {props.content}</span>
+        <span className="opacity-60 text-sm line-clamp-2">
+          {" "}
+          {props.content}
+        </span>
       </div>
     </div>
   );

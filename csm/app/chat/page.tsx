@@ -33,15 +33,24 @@ import {
   where,
 } from "firebase/firestore";
 import * as Accordion from "@radix-ui/react-accordion";
-import { CaretDown, PaperPlaneTilt } from "@phosphor-icons/react";
+import { Archive, CaretDown, PaperPlaneTilt } from "@phosphor-icons/react";
 import styles from "./styles.module.css";
 import Avatar from "boring-avatars";
 
 const fetchConversation = (
   setConversationMessages: any,
-  currentconversationId: any
+  currentconversationId: any,
+  iscurrentArchived: boolean
 ) => {
-  const conversationMessageRef = collection(firestore, "conversations");
+  let conversationMessageRef;
+
+  if (iscurrentArchived) {
+    conversationMessageRef = collection(firestore, "archivedConversations");
+  } else {
+    conversationMessageRef = collection(firestore, "conversations");
+  }
+
+  console.log(iscurrentArchived);
 
   // currentconversationId
   const q = query(conversationMessageRef);
@@ -67,6 +76,7 @@ function page() {
 
   const [currentConversationId, setCurrentConversationId] = useState("");
   const [currentUsername, setCurrentUsername] = useState("");
+  const [iscurrentArchived, setisCurrentArchived] = useState(false);
 
   // const dummy = useRef(<HTMLDivElement/>);
   // Remember to scroll this div into view on message send
@@ -82,6 +92,9 @@ function page() {
   const q3 = query(collection(firestore, "agents"));
 
   const [agentsCount] = useCollectionData(q3);
+
+  const q4 = query(collection(firestore, "archivedConversations"));
+  const [archivedChats] = useCollectionData(q4);
 
   useEffect(() => {
     if (!sessionStorage.getItem("UUID")) {
@@ -107,7 +120,8 @@ function page() {
 
     const unsubscribe = fetchConversation(
       setCoversationMessages,
-      currentConversationId
+      currentConversationId,
+      iscurrentArchived
     );
 
     return () => unsubscribe();
@@ -119,10 +133,30 @@ function page() {
   );
   const [conversations] = useCollectionData(q2);
 
+  const handleArchivedMessage = async (msg: any, senderuuid: string) => {
+    // Set the current conversation to archived
+    setisCurrentArchived(true);
+    // Check if the agentID is present
+
+    if (msg.agentuuid.length > 15) {
+      setCurrentConversationId(msg.agentuuid + msg.senderuuid);
+      setCurrentUsername(msg.username);
+    } else {
+      const chatref = collection(firestore, "archivedConversations");
+      const q = query(chatref, where("senderuuid", "==", senderuuid));
+      const snapshot = await getDocs(q);
+      snapshot.forEach((doc) => {
+        setCurrentConversationId(doc.id);
+      });
+      // handleChatTransition({senderid : msg.senderuuid})
+    }
+  };
+
   const transitionChat = async (usermessage: any) => {
     // Check weather the conversation between the two exists if not
     // Create a conversation between the agent and the customer
     // After the conversation has been created, the message should then be deleted from the Messages Document and moved to Conversations
+    setisCurrentArchived(false);
     let conversationid;
     let senderid;
 
@@ -198,7 +232,7 @@ function page() {
       senderid = usermessage.userid;
       conversationid = agentUUID + usermessage.userid;
     }
-
+    setisCurrentArchived(false);
     setCurrentConversationId(conversationid);
     setCurrentUsername(usermessage.username);
   };
@@ -342,6 +376,7 @@ function page() {
             </div>
           </div>
           <div className="w-10/12 h-full overflow-y-auto">
+            {/* Unassigned Messsages */}
             <Accordion.Root type="single" collapsible>
               <Accordion.Item value="item-1">
                 <Accordion.Trigger
@@ -382,6 +417,7 @@ function page() {
               </Accordion.Item>
             </Accordion.Root>
 
+            {/* Normal Conversations */}
             {conversations &&
               conversations.map((msg, index) => (
                 <div
@@ -397,6 +433,53 @@ function page() {
                   />
                 </div>
               ))}
+            {/* Archived Conversations */}
+            <div className="justify-self-end">
+              <Accordion.Root type="single" collapsible>
+                <Accordion.Item value="item-1">
+                  <Accordion.Trigger
+                    className={[
+                      styles.AccordionTrigger,
+                      "flex flex-row",
+                      "hover:bg-[#2b2d31]",
+                      "rounded-xl",
+                      "hover:cursor-pointer",
+                      "py-4",
+                      "w-full",
+                      "items-center",
+                    ].join(" ")}
+                  >
+                    <Archive size={24} color="#FFDB58" />
+                    <span className="ml-3 mr-2 font-bold text-[#FFDB58]">
+                      Archived Conversations
+                    </span>
+                    <CaretDown
+                      className={styles.AccordionChevron}
+                      style={{ transition: "300ms" }}
+                      aria-hidden
+                      size={18}
+                    ></CaretDown>
+                  </Accordion.Trigger>
+                  <Accordion.Content className={styles.AccordionContent}>
+                    {archivedChats &&
+                      archivedChats.map((msg, index) => (
+                        <div
+                          key={index}
+                          onClick={() => {
+                            handleArchivedMessage(msg, msg.senderuuid);
+                          }}
+                        >
+                          <MessageCard
+                            assigned={true}
+                            displayName={msg.username}
+                            content={msg.messages[0]["content"]}
+                          />
+                        </div>
+                      ))}
+                  </Accordion.Content>
+                </Accordion.Item>
+              </Accordion.Root>
+            </div>
           </div>
         </div>
         <hr style={{ margin: "auto" }} className="opacity-50 w-10/12 p-3" />
