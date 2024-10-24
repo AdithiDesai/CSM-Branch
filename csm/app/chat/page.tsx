@@ -234,6 +234,7 @@ function page() {
       );
 
       await updateDoc(conversationRef, { messages: arrayUnion(newData) });
+      setMessageData({ content: "" });
     } catch (error) {
       console.log(error);
     }
@@ -253,9 +254,25 @@ function page() {
     if (!response.ok) {
       console.error("Error logging out");
     } else {
+      exportConversation();
       sessionStorage.clear();
       router.push("/");
     }
+  };
+
+  const exportConversation = async () => {
+    let data = {
+      agentid: agentUUID,
+    };
+    const response = await fetch("/api/exportConversation", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      return;
+    }
+    console.error("Error Exporting Conversations: ");
   };
 
   const conversationItems = conversationMessages.map((convo, index) => {
@@ -385,12 +402,12 @@ function page() {
         <hr style={{ margin: "auto" }} className="opacity-50 w-10/12 p-3" />
         <div id="userDetails" className="flex flex-row p-4">
           <div className="mr-3">
-            <Image
-              src="/boy.png"
-              height={42}
-              width={42}
-              alt="User Profile Image"
-            ></Image>
+            <Avatar
+              size={42}
+              name={agentname}
+              variant="beam"
+              colors={["#A7C5BD", "#E5DDCB", "#EB7B59", "#CF4647", "#524656"]}
+            />
           </div>
           <div>
             <span className={["text-xl font-bold"].join("")}>{agentname}</span>
